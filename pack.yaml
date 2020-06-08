@@ -1,0 +1,7 @@
+---
+name : tests
+ref: tests
+description : A pack to test things
+version : 0.1.0
+author : Bitovi, LLC
+email : mick@bitovi.com

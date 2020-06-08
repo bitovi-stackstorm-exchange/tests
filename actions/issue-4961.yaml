@@ -1,0 +1,16 @@
+---
+name: issue-4961
+description: |
+  Test ways to get a key value from an object
+  https://github.com/StackStorm/st2/issues/4961
+
+runner_type: orquesta
+entry_point: workflows/issue-4961.yaml
+enabled: true
+parameters:
+  alert:
+    type: object
+    description: |
+      Object with a "status" field as a string
+      example:
+      { "status": "foo" }

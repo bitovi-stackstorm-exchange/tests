@@ -1,0 +1,38 @@
+version: 1.0
+
+description: Test all the methods
+
+input:
+  - alert
+
+tasks:
+
+  task1:
+    action: core.echo message=<% ctx(alert).get('status') %>
+  task2:
+    action: core.echo message=<% str(ctx(alert).get('status')) %>
+
+  task1:
+    action: core.echo message=<% ctx(alert).get("'status'") %>
+  task2:
+    action: core.echo message=<% str(ctx(alert).get("'status'")) %>
+
+  task3:
+    action: core.echo message=<% ctx(alert).get("status") %>
+  task4:
+    action: core.echo message=<% str(ctx(alert).get("status")) %>
+
+  task3:
+    action: core.echo message=<% ctx(alert).get("status", "") %>
+  task4:
+    action: core.echo message=<% str(ctx(alert).get("status", "")) %>
+    
+  task5:
+    action: core.echo message=<% ctx(alert).status %>
+  task5:
+    action: core.echo message=<% str(ctx(alert).status) %>
+
+  task5:
+    action: core.echo message=<% ctx().alert.status %>
+  task5:
+    action: core.echo message=<% str(ctx().alert.status) %>
