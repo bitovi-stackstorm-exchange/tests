@@ -1,0 +1,17 @@
+---
+name: issue-4961-12
+description: |
+  https://github.com/StackStorm/st2/issues/4961
+
+  str(ctx().alert.status)
+
+runner_type: orquesta
+entry_point: workflows/issue-4961-12.yaml
+enabled: true
+parameters:
+  alert:
+    type: object
+    description: |
+      Object with a "status" field as a string
+      example:
+      { "status": "foo" }

@@ -1,0 +1,10 @@
+version: 1.0
+
+description: Test all the methods
+
+input:
+  - alert
+
+tasks:
+  task7:
+    action: core.echo message=<% ctx(alert).get("status", "") %>

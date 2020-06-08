@@ -8,31 +8,55 @@ input:
 tasks:
 
   task1:
-    action: core.echo message=<% ctx(alert).get('status') %>
+    action: tests.issue-4961-1
+    input:
+      alert: <% ctx().alert %>
   task2:
-    action: core.echo message=<% str(ctx(alert).get('status')) %>
+    action: tests.issue-4961-2
+    input:
+      alert: <% ctx().alert %>
 
   task3:
-    action: core.echo message=<% ctx(alert).get("'status'") %>
+    action: tests.issue-4961-3
+    input:
+      alert: <% ctx().alert %>
   task4:
-    action: core.echo message=<% str(ctx(alert).get("'status'")) %>
+    action: tests.issue-4961-4
+    input:
+      alert: <% ctx().alert %>
 
   task5:
-    action: core.echo message=<% ctx(alert).get("status") %>
+    action: tests.issue-4961-5
+    input:
+      alert: <% ctx().alert %>
   task6:
-    action: core.echo message=<% str(ctx(alert).get("status")) %>
+    action: tests.issue-4961-6
+    input:
+      alert: <% ctx().alert %>
 
   task7:
-    action: core.echo message=<% ctx(alert).get("status", "") %>
+    action: tests.issue-4961-7
+    input:
+      alert: <% ctx().alert %>
   task8:
-    action: core.echo message=<% str(ctx(alert).get("status", "")) %>
+    action: tests.issue-4961-8
+    input:
+      alert: <% ctx().alert %>
     
   task9:
-    action: core.echo message=<% ctx(alert).status %>
+    action: tests.issue-4961-9
+    input:
+      alert: <% ctx().alert %>
   task10:
-    action: core.echo message=<% str(ctx(alert).status) %>
+    action: tests.issue-4961-10
+    input:
+      alert: <% ctx().alert %>
 
   task11:
-    action: core.echo message=<% ctx().alert.status %>
+    action: tests.issue-4961-11
+    input:
+      alert: <% ctx().alert %>
   task12:
-    action: core.echo message=<% str(ctx().alert.status) %>
+    action: tests.issue-4961-12
+    input:
+      alert: <% ctx().alert %>
