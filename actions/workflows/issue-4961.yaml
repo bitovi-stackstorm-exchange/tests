@@ -12,27 +12,27 @@ tasks:
   task2:
     action: core.echo message=<% str(ctx(alert).get('status')) %>
 
-  task1:
+  task3:
     action: core.echo message=<% ctx(alert).get("'status'") %>
-  task2:
+  task4:
     action: core.echo message=<% str(ctx(alert).get("'status'")) %>
 
-  task3:
+  task5:
     action: core.echo message=<% ctx(alert).get("status") %>
-  task4:
+  task6:
     action: core.echo message=<% str(ctx(alert).get("status")) %>
 
-  task3:
+  task7:
     action: core.echo message=<% ctx(alert).get("status", "") %>
-  task4:
+  task8:
     action: core.echo message=<% str(ctx(alert).get("status", "")) %>
     
-  task5:
+  task9:
     action: core.echo message=<% ctx(alert).status %>
-  task5:
+  task10:
     action: core.echo message=<% str(ctx(alert).status) %>
 
-  task5:
+  task11:
     action: core.echo message=<% ctx().alert.status %>
-  task5:
+  task12:
     action: core.echo message=<% str(ctx().alert.status) %>
