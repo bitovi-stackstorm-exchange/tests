@@ -22,7 +22,7 @@ tasks:
     next:
       - when: <% succeeded() %>
         publish:
-          - stored_sites: <% task(query_sitecontext).result.items.select($.result.result) %>
+          - stored_sites: <% task(query_sitecontext).result.items.select($.result) %>
         do: query_fmg_unregistered
 
   query_fmg_unregistered:
