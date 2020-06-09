@@ -22,10 +22,14 @@ tasks:
     next:
       - when: <% succeeded() %>
         publish:
-          - stored_sites: <% task(query_sitecontext).result.items %>
+          - stored_sites: <% task(query_sitecontext).result.items.select($.result) %>
         do: query_fmg_unregistered
 
   query_fmg_unregistered:
     action: core.echo
     input:
-      message: "{{ ctx().stored_sites }}"
+      message: |
+        {% for site in ctx().stored_sites %}
+        result is:
+        {{ site | string }}
+        {% endfor %}
