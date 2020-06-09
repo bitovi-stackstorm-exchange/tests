@@ -1,0 +1,24 @@
+---
+name: grep-object-test
+description: |
+  I have an orquesta workflow where I am trying to use kv.grep_object with a list of prefixes and then assemble the results into a single list of kv objects.
+  The calls return succeeded() 
+  but if the grep returns nothing, result().result errors when I try to reference it.
+  When I look at result(), result exists whether the grep found anything or not. 
+
+  Objective: to determine if I am going to be able to add result().result to my final list.
+  Or maybe some direction of a better approach.
+
+runner_type: orquesta
+entry_point: workflows/grep-object-test.yaml
+enabled: true
+parameters:
+  custcontext:
+    type: object
+    description: |
+      {
+        "flocs": [
+          "55555",
+          "999999"
+        ]
+      }
