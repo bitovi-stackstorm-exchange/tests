@@ -31,5 +31,5 @@ tasks:
       message: |
         {% for site in ctx().stored_sites %}
         result is:
-        {{ site.result.result | string }}
+        {{ site | string }}
         {% endfor %}
